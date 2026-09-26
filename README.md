@@ -6,7 +6,7 @@ This is the inference package. The model weights live on Hugging Face at [`cmul8
 
 ## Install
 
-**Prerequisites:** Python ≥ 3.10 and a CUDA-capable GPU with bf16 support (Ampere or newer). See [Hardware requirements](#hardware-requirements) below.
+**Prerequisites:** Python ≥ 3.10 and a CUDA-capable GPU with bf16 support (Ampere or newer).
 
 ### 1. PyTorch
 
@@ -74,22 +74,6 @@ All three questions above run in **a single forward pass**.
 | `noul` | — | `instructions: str` | `probs = [P(false), P(true)]`, `answer: bool`, `p_true: float` |
 
 Every `Decision` also carries a `confidence: float ∈ [0, 1]` calibrated so 1.0 is a fully certain top pick and 0.0 is uniform.
-
-## Hardware requirements
-
-- CUDA GPU with bf16 support (compute capability ≥ 8.0 — Ampere or newer).
-- Minimum ~10 GB VRAM for the Qwen3-4B backbone in bf16 plus the LoRA adapter and activations.
-
-Typical single-decision latency on H100: ~76 ms p50 (batch of 1). Batched decisions of 3 questions share a single forward pass; expect ~1.5–3× speedup vs. looping.
-
-## Not in v1
-
-- No CPU or MPS inference (CUDA-only).
-- No CLI (`nirnaya decide ...`) — write 5 lines of Python.
-- No HTTP server or OpenAI-compatible endpoint.
-- No int4 / int8 quantised inference.
-- No PyPI upload — install via `pip install git+https://...` for now.
-- No fine-tuning helpers, no dataset tooling, no calibration recipe (calibration recipe is planned as a follow-up).
 
 ## Licence
 
