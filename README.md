@@ -10,7 +10,7 @@ This is the inference package. The model weights live on Hugging Face at [`cmul8
 
 ### 1. PyTorch
 
-Pick the CUDA wheel that matches your driver — see the [official picker](https://pytorch.org/get-started/locally/):
+Pick the CUDA wheel that matches your driver 
 
 ```bash
 pip install torch --index-url https://download.pytorch.org/whl/cu124   # or cu118 / cu121 / cu126 / cu128
