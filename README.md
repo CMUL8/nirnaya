@@ -35,15 +35,12 @@ The first `NirnayaModel.from_pretrained("cmul8-hf/nirnaya")` call downloads:
 - **Qwen3-4B backbone** — ~8 GB, one-time
 - **Nirṇaya adapter + heads** — ~200 MB
 
-Expect **a few minutes** on the first call; subsequent loads are near-instant from cache.
 
-Weights are cached in `~/.cache/huggingface/` (Linux/macOS) or `%USERPROFILE%\.cache\huggingface\` (Windows). On a shared machine with limited home-dir quota, point the cache elsewhere before the first load:
 
 ```bash
 export HF_HOME=/path/to/large/disk/hf-cache
 ```
 
-If `cmul8-hf/nirnaya` is ever gated, authenticate once with `huggingface-cli login`.
 
 ### For contributors
 
