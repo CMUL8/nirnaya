@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nirnaya"
+version = "0.1.0"
+description = "Inference package for Nirṇaya — an India-first System-One decision model"
+readme = "README.md"
+license = { text = "CC-BY-NC-4.0" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Basab Ghosh" },
+    { name = "Sagar Sarkale" },
+    { name = "Abhijeet Katte" },
+]
+keywords = ["decision-making", "system-one", "calibrated-probabilities", "lora", "qwen3", "indic", "hinglish"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+# torch is installed separately with the CUDA index (see README)
+dependencies = [
+    "transformers>=4.56",
+    "peft>=0.14",
+    "accelerate>=1.2",
+    "huggingface-hub>=0.27",
+    "sentencepiece>=0.2",
+    "safetensors>=0.4",
+    "tqdm>=4.67",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3", "ruff>=0.9"]
+
+[project.urls]
+Homepage = "https://huggingface.co/cmul8-hf/nirnaya"
+"Model card" = "https://huggingface.co/cmul8-hf/nirnaya"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nirnaya"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
