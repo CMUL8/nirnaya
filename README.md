@@ -35,13 +35,6 @@ The first `NirnayaModel.from_pretrained("cmul8-hf/nirnaya")` call downloads:
 - **Qwen3-4B backbone** — ~8 GB, one-time
 - **Nirṇaya adapter + heads** — ~200 MB
 
-
-
-```bash
-export HF_HOME=/path/to/large/disk/hf-cache
-```
-
-
 ### For contributors
 
 ```bash
